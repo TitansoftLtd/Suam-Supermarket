@@ -1,0 +1,38 @@
+<h2 style="text-align: center;">Customer Statement</h2>
+<div class="row">
+  <div class="col-md-4">
+    <p><strong>Customer:</strong> {{ filters.customer }}</p>
+  </div>
+  <div class="col-md-4">
+    <p><strong>From:</strong> {{ filters.from_date }}</p>
+  </div>
+  <div class="col-md-4">
+    <p><strong>To:</strong> {{ filters.to_date }}</p>
+  </div>
+</div>
+
+
+<table class="table table-bordered">
+  <thead>
+    <tr>
+      <th>Date</th>
+      <th>Reference</th>
+      <th>Voucher Type</th>
+      <th>Debit</th>
+      <th>Credit</th>
+      <th>Balance</th>
+    </tr>
+  </thead>
+  <tbody>
+    {% for row in data %}
+      <tr>
+        <td>{{ row.date }}</td>
+        <td>{{ row.reference_no }}</td>
+        <td>{{ row.voucher_type }}</td>
+        <td>{{ row.debit }}</td>
+        <td>{{ row.credit }}</td>
+        <td>{{ row.balance }}</td>
+      </tr>
+    {% endfor %}
+  </tbody>
+</table>
